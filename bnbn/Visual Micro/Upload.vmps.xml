@@ -1,0 +1,37 @@
+<VisualMicro>
+  <Program Name="bnbn" Ext=".ino" Location="c:\Users\Paulo\Google Drive\Arduino\sketchbook\bnbn">
+    <Platform Name="arduino10x" Package="arduino" Platform="avr" Architecture="avr">
+      <Board Name="nano328" Description="Arduino Nano w/ ATmega328" CoreFolder="c:\Arduino\hardware\arduino\cores\arduino" VariantFullPath="c:\Arduino\hardware\arduino\variants\eightanaloginputs" McuIdePath="c:\Arduino" McuSketchBookPath="c:\Users\Paulo\Google Drive\Arduino\sketchbook" name="Arduino Nano w/ ATmega328" upload.protocol="arduino" upload.maximum_size="30720" upload.speed="57600" bootloader.low_fuses="0xFF" bootloader.high_fuses="0xDA" bootloader.extended_fuses="0x05" bootloader.path="atmega" bootloader.file="ATmegaBOOT_168_atmega328.hex" bootloader.unlock_bits="0x3F" bootloader.lock_bits="0x0F" build.mcu="atmega328p" build.f_cpu="16000000L" build.core="arduino" build.variant="eightanaloginputs" runtime.ide.path="c:\Arduino" build.system.path="c:\Arduino\hardware\arduino\system" runtime.ide.version="106" originalid="nano328" vm.platform.root.path="C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino10x" ide.hint="Arduino 0023 and 1.0.x Ide" ide.location.key="Arduino" ide.location.ide.winreg="Arduino 1.0.x Application" ide.location.sketchbook.winreg="Arduino 1.0.x Sketchbook" ide.location.sketchbook.preferences="sketchbook.path" ide.location.sketchbook.default="%MYDOCUMENTS%\arduino" ide.location.preferences="%VM_APPDATA_ROAMING%\arduino\preferences.txt" ide.default.package="arduino" ide.default.platform="avr" ide.multiplatform="true" ide.includes="arduino.h" ide.platformswithoutpackage="true" ide.includes.fallback="wprogram.h" ide.extension="ino" ide.extension.fallback="pde" ide.versionLTEQ="149" ide.exe="arduino.exe" ide.hosts="atmel" ide.url="http://arduino.cc/en/Main/Software" vm.debug="true" software="ARDUINO" ide.appid="arduino10x" location.sketchbook="c:\Users\Paulo\Google Drive\Arduino\sketchbook" build.core.vmresolved="c:\Arduino\hardware\arduino\cores\arduino" build.core.parentfolder.vmresolved="c:\Arduino\hardware\arduino\cores" build.core.coresparentfolder.vmresolved="c:\Arduino\hardware\arduino" vm.core.include="arduino.h" build.board="AVR_NANO328" vm.boardsource.path="c:\Arduino\hardware\arduino" runtime.platform.path="c:\Arduino\hardware\arduino" vm.platformname.name="avr" build.arch="AVR" build.variant.vmresolved="c:\Arduino\hardware\arduino\variants\eightanaloginputs" vm.runtime.compiler.showwarnings="false" serial.port.file="COM3" serial.port="COM3" compiler.path="c:\Arduino\hardware\tools\avr\bin\" includes=" -I&quot;c:\Arduino\hardware\arduino\cores\arduino&quot;  -I&quot;c:\Arduino\hardware\arduino\variants\eightanaloginputs&quot;  -I&quot;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers\VM_DBG&quot;  -I&quot;c:\Arduino\libraries&quot;  -I&quot;c:\Arduino\hardware\arduino\libraries&quot;  -I&quot;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers&quot;  -I&quot;c:\Users\Paulo\Google Drive\Arduino\sketchbook\libraries&quot; " build.path="C:\Users\Paulo\AppData\Local\VMicro\Arduino\Builds\bnbn\nano328" build.project_name="bnbn" build.variant.path="c:\Arduino\hardware\arduino\variants\eightanaloginputs" archive_file="core.a" object_file="C:\Users\Paulo\AppData\Local\VMicro\Arduino\Builds\bnbn\nano328\VM_DBG\VM_DBG.cpp.o" source_file="C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers\VM_DBG\VM_DBG.cpp" object_files="&quot;C:\Users\Paulo\AppData\Local\VMicro\Arduino\Builds\bnbn\nano328\bnbn.cpp.o&quot; &quot;C:\Users\Paulo\AppData\Local\VMicro\Arduino\Builds\bnbn\nano328\VM_DBG\VM_mem_check.c.o&quot; &quot;C:\Users\Paulo\AppData\Local\VMicro\Arduino\Builds\bnbn\nano328\VM_DBG\VM_DBG.cpp.o&quot; " build.architecture="avr" vmresolved.compiler.path="c:\Arduino\hardware\tools\avr\bin\" vmresolved.tools.path="c:\Arduino\hardware\tools\avr" />
+    </Platform>
+    <Compile CompilerErrors="0" ConfigurationName="Debug" StopOnError="False" OptimiseLibs="True" OptimiseCore="True" IsDebugStart="1" BuildPath="C:\Users\Paulo\AppData\Local\VMicro\Arduino\Builds\bnbn\nano328" SketchName="bnbn" ReportDigitalPins="0" ReportAnalogPins="0" ReportI2C="0" ReportFreeMemory="0" IncludeDebug="1" LastDebugPreProcessorDefinitions="VM_DEBUG;VM_DEBUG_ENABLE 1;VM_DEBUG_BANDWIDTH_THROTTLE_MS 50;VM_DEBUGGER_TYPE_HARDWARESERIAL 0;VM_DEBUGGER_TYPE_SOFTWARESERIAL 1;VM_DEBUGGER_TYPE_FASTSERIAL 2;VM_DEBUGGER_TYPE_USB 3;VM_DEBUGGER_TYPE_TEENSY 4;VM_DEBUGGER_TYPE_UART 5;VM_DEBUGGER_TYPE_USART 6;VM_DEBUGGER_TYPE_USBSERIAL 7;VM_DEBUGGER_TYPE_TTYUART 8;VM_DEBUGGER_TYPE_NET_CONSOLE 9;VM_DEBUGGER_TYPE_Uart 10;VM_DEBUGGER_TYPE VM_DEBUGGER_TYPE_HARDWARESERIAL;VM_DEBUG_BREAKPAUSE;" IncludesDebug="1" IsCompiled="1" />
+    <Debug EnableBreak="1" DebugEnabled="1" RemotePortSpeedWrittenToDebugSource="9600" />
+    <VCCodeModel>
+      <VCCodeMacros />
+    </VCCodeModel>
+    <BreakPoints>
+      <BreakPoint Index="1" Name="bnbn.ino, línea 25" Id="48c820b3-a67f-46dc-8d49-a25802731038" Enabled="1" Message="millis is currently {millis()}" MessageTextType="0" PreProcessedMessage="millis is currently {0}" Condition="millis()&gt;0 || millis()&gt;1" ConditionType="1" CurrentHits="0" File="c:\users\paulo\google drive\arduino\sketchbook\bnbn\bnbn.ino" FileLine="25" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="250" HitCountType="4" Language="C++" LocationType="3" Tag="&lt;vmbp Id='48c820b3-a67f-46dc-8d49-a25802731038'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="1">
+        <Source>18		Serial.println("init");
+19		// initialize the digital pin as an output.
+20		pinMode(led, OUTPUT);
+21		pinMode(led2, OUTPUT);
+22	}
+23	
+24	// the loop routine runs over and over again forever:
+--&gt;25	void loop()
+26	{
+27		if (Serial.available() &gt; 0)
+28			val = Serial.read();
+29	
+30		if (val == '1')
+31		{
+32			int i;
+33			for (i = 0; i&lt;5; i++);
+34			{
+</Source>
+        <MessageVariables>
+          <MessageVariable Name="millis()" Index="1" />
+        </MessageVariables>
+      </BreakPoint>
+    </BreakPoints>
+  </Program>
+</VisualMicro>

@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LCD_2004_AVR", "LCD_2004_AVR\LCD_2004_AVR.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{179AC36B-1F8B-4E4C-A95F-01A2513E4E44}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\ADC.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\ADC.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\adjust.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\adjust.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\cap.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\cap.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\CHANGES = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\CHANGES
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\common.h = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\common.h
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\config.h = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\config.h
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\EUPL-v1.1.pdf = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\EUPL-v1.1.pdf
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\extras.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\extras.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\functions.h = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\functions.h
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\HD44780.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\HD44780.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\HD44780.h = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\HD44780.h
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\inductor.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\inductor.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\IR.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\IR.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\main.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\main.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\pause.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\pause.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\probes.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\probes.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\README = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\README
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\resistor.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\resistor.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\semi.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\semi.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\user.c = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\user.c
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\variables.h = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\variables.h
+		C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\wait.S = C:\Users\Paulo\Desktop\transistortester-master\Software\Markus\ComponentTester-classic-1.21m\wait.S
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

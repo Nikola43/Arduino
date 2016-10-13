@@ -1,0 +1,3 @@
+-CC:\Arduino\hardware\tools\avr\etc\avrdude.conf -patmega328p -cwiring -P\\.\COM3 -b115200 -D -Uflash:w:$(ItemDir)Debug\$(TargetName).hex:i
+
+$(TargetName)

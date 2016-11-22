@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 //#define KEY 7
-#define TXD 7
-#define RXD 8
+#define TXD 10
+#define RXD 11
 
 SoftwareSerial BTSerial(RXD, TXD); // RX | TX
 

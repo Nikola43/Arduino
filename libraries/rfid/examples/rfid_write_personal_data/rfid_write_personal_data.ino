@@ -3,7 +3,7 @@
  * Uses MFRC522 - Library to use ARDUINO RFID MODULE KIT 13.56 MHZ WITH TAGS SPI W AND R BY COOQROBOT. 
  * -----------------------------------------------------------------------------------------
  *             MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
- *             Reader/PCD   Uno           Mega      Nano v3    Leonardo/Micro   Pro Micro
+ *             Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
  * Signal      Pin          Pin           Pin       Pin        Pin              Pin
  * -----------------------------------------------------------------------------------------
  * RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
@@ -22,13 +22,14 @@
 #include <SPI.h>
 #include <MFRC522.h>
 
-#define SS_PIN 10    //Arduino Uno
-#define RST_PIN 9
-MFRC522 mfrc522(SS_PIN, RST_PIN);        // Create MFRC522 instance.
+#define RST_PIN         9           // Configurable, see typical pin layout above
+#define SS_PIN          10          // Configurable, see typical pin layout above
+
+MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance
 
 void setup() {
         Serial.begin(9600);        // Initialize serial communications with the PC
-        SPI.begin();                // Init SPI bus
+        SPI.begin();               // Init SPI bus
         mfrc522.PCD_Init();        // Init MFRC522 card
         Serial.println(F("Write personal data on a MIFARE PICC "));
 }
@@ -53,7 +54,7 @@ void loop() {
           Serial.print(mfrc522.uid.uidByte[i], HEX);
         } 
         Serial.print(F(" PICC type: "));   // Dump PICC type
-        byte piccType = mfrc522.PICC_GetType(mfrc522.uid.sak);
+        MFRC522::PICC_Type piccType = mfrc522.PICC_GetType(mfrc522.uid.sak);
         Serial.println(mfrc522.PICC_GetTypeName(piccType));
          
         byte buffer[34];  

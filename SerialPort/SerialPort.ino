@@ -1,5 +1,5 @@
 int byteRecibido = 0;
-int led = 13;
+int led = 12;
 
 void setup() 
 {

@@ -19,8 +19,6 @@ MIFARE_Key	KEYWORD1
 #######################################
 # KEYWORD2 Methods and functions
 #######################################
-# Functions for setting up the Arduino
-setSPIConfig	KEYWORD2
 
 # Basic interface functions for communicating with the MFRC522
 PCD_WriteRegister	KEYWORD2
@@ -59,16 +57,23 @@ MIFARE_Increment	KEYWORD2
 MIFARE_Ultralight_Write	KEYWORD2
 MIFARE_GetValue	KEYWORD2
 MIFARE_SetValue	KEYWORD2
+PCD_NTAG216_AUTH	KEYWORD2
 
 # Support functions
 PCD_MIFARE_Transceive	KEYWORD2
 GetStatusCodeName	KEYWORD2
 PICC_GetType	KEYWORD2
 PICC_GetTypeName	KEYWORD2
+
+# Support functions for debuging
+PCD_DumpVersionToSerial	KEYWORD2
 PICC_DumpToSerial	KEYWORD2
+PICC_DumpDetailsToSerial	KEYWORD2
 PICC_DumpMifareClassicToSerial	KEYWORD2
 PICC_DumpMifareClassicSectorToSerial	KEYWORD2
 PICC_DumpMifareUltralightToSerial	KEYWORD2
+
+# Advanced functions for MIFARE
 MIFARE_SetAccessBits	KEYWORD2
 MIFARE_OpenUidBackdoor	KEYWORD2
 MIFARE_SetUid	KEYWORD2

@@ -3,6 +3,8 @@
 #include <SoftwareSerial.h>
 #define TXD 4
 #define RXD 5
+#define SPEAKER 6
+
 
 SoftwareSerial BTSerial(RXD, TXD); // RX | TX
 ArduinoCar * coche = new ArduinoCar();
@@ -14,16 +16,150 @@ int melody[] = {
 // note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
   4, 8, 8, 4,4,4,4,4 };
-  
+
+byte cadenaRecibida[2];
+int contadorCaracteres = 0;
   
 char datosRecibidos = '0';
-char datosEnviados = '0';
-boolean estaAndando = false;
+int datosEnviados = '0';
+boolean andar = false ,andarPlus = false, giroDr = false , giroIzq = false , intermitenteIzq = false , intermitenteDr = false;
 
 
 void setup()
 {
-  // iterate over the notes of the melody:
+
+  tocarMelodiaEncendido();
+	Serial.begin(115200);
+	BTSerial.begin(115200);
+}
+
+void imprimirCadena(byte cadena[])
+{
+    int c = 0;
+    while ( cadena[c] != '\0' )
+    {
+      Serial.print(cadena[c]);
+      c++;
+    } 
+    Serial.println();
+}
+
+void limpiarCadena(byte cadena[])
+{
+    int c = 0;
+    while ( cadena[c] != '\0' )
+    {
+      cadena[c] = '\0';
+      c++;
+    } 
+}
+
+void loop()
+{
+	// Leia la salida del HC-05 and envie al Monitor Serial del Arduino
+	if (BTSerial.available())
+	{
+		datosRecibidos = BTSerial.read();
+    Serial.write(datosRecibidos);
+    Serial.println();
+	}
+ 
+	if ( datosRecibidos != 0 )
+	{   
+
+    //AndarPlus
+    if(datosRecibidos == 'p' && andar == false)
+    {
+     coche->marchaAdelantePlus();
+      andar = true;
+    }
+
+    //Parar
+    if(datosRecibidos == 's' && andar == true)
+    {
+      coche->parar();
+      andar = false;
+    }
+
+    //MarchaAtras
+    if(datosRecibidos == 'x' && andar == false)
+    {
+      coche->marchaAtras();
+      andar = true;
+      
+    }
+
+    //GiroDerecha
+    if(datosRecibidos == 'd' && giroDr == false)
+    {
+      coche->girarDerecha();
+      giroDr = true;
+    }
+
+    //GiroIzquierda
+    if(datosRecibidos == 'a' && giroIzq == false)
+    {
+      coche->girarIzquierda();
+      giroIzq = true;
+    }
+
+    //Parar Giro
+    if(giroIzq == true || giroDr == true)
+    {
+      if(datosRecibidos = 'k')
+      {
+        coche->pararGiro();
+        giroIzq = false;
+        giroDr = false; 
+
+        //Parar intermitente si los hay
+        if(intermitenteIzq == true || intermitenteDr == true)
+        {
+          if(intermitenteIzq == true)
+          {
+            coche->apagarIntermitenteIzquierdo();
+          }else
+          {
+            coche->apagarIntermitenteDerecho();
+          }
+        }
+      }
+    }
+
+    //IntermitenteDer
+    if{datosRecibidos == 6 )
+    {
+      coche->encenderIntermitenteDerecho();
+    }
+
+    //IntermitenteIzq
+    if(datosRecibidos ==  5)
+    {
+      coche->encenderIntermitenteIzquierdo();
+    }
+
+    //Encender Luces
+    if(datosRecibidos == 3)
+    {
+      coche->encenderLucesDelanteras();
+    }
+
+    //Apagar Luces
+    if(datosRecibidos == 4)
+    {
+      coche->apagarLucesDelanteras();
+    }
+    
+	}
+
+  delay(1);
+  datosRecibidos = 0;
+	
+}
+
+void tocarMelodiaEncendido()
+{
+    // iterate over the notes of the melody:
   for (int thisNote = 0; thisNote < 8; thisNote++) {
 
     // to calculate the note duration, take one second 
@@ -39,59 +175,5 @@ void setup()
     // stop the tone playing:
     noTone(6);
   }
-    
-	Serial.begin(115200);
-	BTSerial.begin(115200);
 }
 
-void loop()
-{
-	// Leia la salida del HC-05 and envie al Monitor Serial del Arduino
-	if (BTSerial.available())
-	{
-		Serial.print("Datos Recibidos: ");
-		datosRecibidos = BTSerial.read();
-		Serial.write(datosRecibidos);
-		Serial.println();
-	}
-	
-	// Leia el que  fue  digitado en el Monitor Serial del Arduino y envie al HC-05
-	if (Serial.available())
-	{
-		Serial.print("Datos Enviados: ");
-		datosEnviados = Serial.read();
-		BTSerial.write( datosEnviados );
-		BTSerial.println();
-	}
-	
-	if ( datosRecibidos != 0 )
-	{   
-            switch(datosRecibidos)
-            {
-                case '1'  : coche->marchaAdelante(); break;
-
-                
-                /*
-                case '2'  : coche->coche->parar();   break;
-                case '3'  : coche->marchaAtras();    break;
-                case '4'  : coche->coche->parar();   break;
-                case '5'  : coche->coche->parar();   break;
-                case '6'  : coche->coche->parar();   break;
-                case '7'  : coche->coche->parar();   break;
-                case '8'  : coche->coche->parar();   break;
-                case '9'  : coche->coche->parar();   break;
-                case '10' : coche->coche->parar();   break;
-                case '11' : coche->coche->parar();   break;
-                case '12' : coche->coche->parar();   break;
-                case '13' : coche->coche->parar();   break;
-                case '14' : coche->coche->parar();   break;
-                case '15' : coche->coche->parar();   break;
-                */
-                
-            }
-	}
-
-  delay(1);
-  datosRecibidos = 0;
-	
-}

@@ -1,9 +1,8 @@
 #include <MaxMatrix.h>
-
 #define CLK 7
 #define CS 6
 #define DIN 5
-#define NUM_CHIPS 2
+#define NUM_CHIPS 1
 
 /*  
    Configuracion pines
@@ -125,7 +124,9 @@ MaxMatrix m(data, load, clock, maxInUse); // define Library
 
 byte buffer[10];
 
-char string1[] = "";  // Scrolling Text
+char string1[] = "";
+
+
 
 
 void setup(){
@@ -143,7 +144,7 @@ void loop()
      contadorCaracteres++;
   }
   
-  if ( string1[0] != '\0' )
+  if ( string1 != " " == true )
   {
   byte c;
   delay(100);
@@ -174,3 +175,13 @@ void printStringWithShift(char* s, int shift_speed){
     s++;
   }
 }
+
+void vaciarString()
+{
+  for (int i = 0; i < 100 ; i++) 
+  {
+      string1[i] = '\0';
+  }
+  
+}
+

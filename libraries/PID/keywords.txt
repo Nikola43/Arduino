@@ -1,9 +1,34 @@
-PID		KEYWORD1
-get_pid		KEYWORD2
-reset_I		KEYWORD2
-kP		KEYWORD2
-kD		KEYWORD2
-kI		KEYWORD2
-imax		KEYWORD2
-load_gains	KEYWORD2
-save_gains	KEYWORD2
+#######################################
+# Syntax Coloring Map For PID Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PID	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+SetMode	KEYWORD2
+Compute	KEYWORD2
+SetOutputLimits	KEYWORD2
+SetTunings	KEYWORD2
+SetControllerDirection	KEYWORD2
+SetSampleTime	KEYWORD2
+GetKp	KEYWORD2
+GetKi	KEYWORD2
+GetKd	KEYWORD2
+GetMode	KEYWORD2
+GetDirection	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+AUTOMATIC	LITERAL1
+MANUAL	LITERAL1
+DIRECT	LITERAL1
+REVERSE	LITERAL1

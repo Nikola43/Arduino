@@ -102,14 +102,16 @@ PROGMEM const byte CH[] =
 int PinDatos = 5;
 int PinChipSelect = 6;
 int PinClock = 7;
-int numeroMatrices = 1;
+int numeroMatrices = 2;
     
 byte buffer[10];
 char mensaje[] = " ";
 
+
 char byteEnviado = 'a';
 
 MaxMatrix m(PinDatos, PinChipSelect, PinClock, numeroMatrices);
+int temperatura = 0; 
 
 void setup()
 {
@@ -120,7 +122,18 @@ void setup()
 
 void loop()
 {
-  Serial.write(byteEnviado);
+  temperatura = analogRead(A0);
+  //temperatura = (5.0 * temperatura * 100.0) / 1024.0;
+  //Serial.println(temperatura);
+
+  unsigned int num=temperatura;
+  unsigned int dig=count(num);
+  char arr[dig];
+  while (dig--) {
+   arr[dig]=num%10;
+   num/=10;
+  }
+  
   int contadorCaracteres = 0;
   if (Serial.available() > 0)
   {
@@ -130,7 +143,13 @@ void loop()
 
   printCharWithShift(mensaje[0], 100);  
   delay(100);
-  m.shiftLeft(false, true); 
+  m.shiftLeft(false, true);
+}
+
+unsigned int count(unsigned int i) {
+ unsigned int ret=1;
+ while (i/=10) ret++;
+ return ret;
 }
 
 // Put extracted character on Display

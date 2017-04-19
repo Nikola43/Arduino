@@ -44,4 +44,6 @@ void loop()
   {
     digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
   }
+  Serial.write(input);
+  delay(500);
 }

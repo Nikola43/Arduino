@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.CPP</ToolchainName>
+    <ProjectGuid>{f7e305bc-d28e-44b4-ab07-75ac25a33c6e}</ProjectGuid>
+    <avrdevice>ATSAM3X8E</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>HellloWoldAttiny</AssemblyName>
+    <Name>HellloWoldAttiny</Name>
+    <RootNamespace>HellloWoldAttiny</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.26.0" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATtiny85__</Value>
+      <Value>__AVR_ATTINY85__</Value>
+      <Value>ARDUINO=106013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>__AVR__</Value>
+      <Value>F_CPU={build.f_cpu}</Value>
+      <Value>ARDUINO_attiny</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>C:/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/libraries</Value>
+      <Value>C:/Users/Viejo/GitHub/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/cores/arduino</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8</Value>
+      <Value>../../../HellloWoldAttiny</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATtiny85__</Value>
+      <Value>__AVR_ATTINY85__</Value>
+      <Value>ARDUINO=106013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>__AVR__</Value>
+      <Value>F_CPU={build.f_cpu}</Value>
+      <Value>ARDUINO_attiny</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </armgcccpp.compiler.symbols.DefSymbols>
+  <armgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>C:/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/libraries</Value>
+      <Value>C:/Users/Viejo/GitHub/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/cores/arduino</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8</Value>
+      <Value>../../../HellloWoldAttiny</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
+    </ListValues>
+  </armgcccpp.compiler.directories.IncludePaths>
+  <armgcccpp.compiler.optimization.level>Optimize (-O1)</armgcccpp.compiler.optimization.level>
+  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+  <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+  <armgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.Libraries>
+  <armgcccpp.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../cmsis/linkerScripts</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.LibrarySearchPaths>
+  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+  <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsamd21e18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+  <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+  <armgcccpp.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samd21\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcccpp.preprocessingassembler.general.IncludePaths>
+  <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+</ArmGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>C:/Arduino/libraries;C:/Arduino/hardware/arduino/avr/libraries;C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/libraries;C:/Users/Viejo/GitHub/Arduino/libraries;C:/Arduino/hardware/arduino/avr/cores/arduino;C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8;../../../HellloWoldAttiny;C:/Arduino/hardware/tools/avr/avr/include/;C:/Arduino/hardware/tools/avr/avr/include/avr/;C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;</VMSETTING_IncludePaths>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATtiny85__</Value>
+      <Value>__AVR_ATTINY85__</Value>
+      <Value>ARDUINO=106013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>__AVR__</Value>
+      <Value>F_CPU={build.f_cpu}</Value>
+      <Value>ARDUINO_attiny</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>C:/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/libraries</Value>
+      <Value>C:/Users/Viejo/GitHub/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/cores/arduino</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8</Value>
+      <Value>../../../HellloWoldAttiny</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATtiny85__</Value>
+      <Value>__AVR_ATTINY85__</Value>
+      <Value>ARDUINO=106013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>__AVR__</Value>
+      <Value>F_CPU={build.f_cpu}</Value>
+      <Value>ARDUINO_attiny</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </armgcccpp.compiler.symbols.DefSymbols>
+  <armgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>C:/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/libraries</Value>
+      <Value>C:/Users/Viejo/GitHub/Arduino/libraries</Value>
+      <Value>C:/Arduino/hardware/arduino/avr/cores/arduino</Value>
+      <Value>C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8</Value>
+      <Value>../../../HellloWoldAttiny</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
+      <Value>C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
+    </ListValues>
+  </armgcccpp.compiler.directories.IncludePaths>
+  <armgcccpp.compiler.optimization.level>Optimize (-O1)</armgcccpp.compiler.optimization.level>
+  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+  <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+  <armgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.Libraries>
+  <armgcccpp.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../cmsis/linkerScripts</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.LibrarySearchPaths>
+  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+  <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsamd21e18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+  <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+  <armgcccpp.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samd21\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcccpp.preprocessingassembler.general.IncludePaths>
+  <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+</ArmGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>C:/Arduino/libraries;C:/Arduino/hardware/arduino/avr/libraries;C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/libraries;C:/Users/Viejo/GitHub/Arduino/libraries;C:/Arduino/hardware/arduino/avr/cores/arduino;C:/Users/Viejo/AppData/Local/arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8;../../../HellloWoldAttiny;C:/Arduino/hardware/tools/avr/avr/include/;C:/Arduino/hardware/tools/avr/avr/include/avr/;C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;</VMSETTING_IncludePaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="HellloWoldAttiny.ino">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="__vm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="__vm\.HellloWoldAttiny.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

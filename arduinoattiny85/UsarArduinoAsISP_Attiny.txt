@@ -1,0 +1,3 @@
+C:\Arduino\hardware\tools\avr\bin -CC:\Arduino\hardware\tools\avr/etc/avrdude.conf -v -pattiny85 -cstk500v1 -PCOM6 -b19200 -Uflash:w:"$(TargetDir)$(TargetName).hex":i
+
+C:\Arduino\hardware\tools\avr\bin -CC:\Arduino\hardware\tools\avr/etc/avrdude.conf -v -pattiny85 -cstk500v1 -PCOM6 -b19200 -Uflash:w:C:\Users\Viejo\Desktop\Debug\attiny85Arduino.hex:i

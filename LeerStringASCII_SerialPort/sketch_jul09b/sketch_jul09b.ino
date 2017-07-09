@@ -10,13 +10,14 @@ void loop() {
   if(Serial.available() > 0)
   {
      char* serialInput = GetSerialString();
-     interval = atoi(serialInput);
-     Serial.print("LED interval is now ");
-     Serial.println(interval,HEX);
+
+     for ( int i = 0; serialInput[i] != '\0'; i++ )
+     {
+          Serial.println(serialInput[i]);
+     }
   }
 
 }
-
 
 char* GetSerialString()
 {
@@ -32,13 +33,10 @@ char* GetSerialString()
        {
            /*Place the character in the string buffer:*/
            string[index] = byteBuffer;
+           string[index + 1] = '\0';
            /*Go to the index to place the next character in:*/
            index++;
        }
    }
-   
-   string[255] = '\0'; //Null-terminate the string;
-   
    return string;
 }
-

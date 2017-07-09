@@ -2,6 +2,7 @@
 #ifdef __AVR__
   #include <avr/power.h>
 #endif
+#include <EEPROM.h>
 
 #define PIN 6
 #define NUM_LEDS 1
@@ -20,28 +21,45 @@ void setup()
     strip.show();
 }
 
-int inter;
 
 void loop() 
 {
    char* serialInput;
-  
+   
    if(Serial.available() > 0)
    {
      serialInput = GetSerialString();
      
-     for ( int i = 0; serialInput[i] != '\0'; i++ )
-     {
-          Serial.println(serialInput[i]);
-     }
+     EEPROM.write(0, '0');
+     EEPROM.write(1, 'x');
+     EEPROM.write(2, serialInput[0]);
+     EEPROM.write(3, serialInput[1]);
+     EEPROM.write(4, serialInput[2]);
+     EEPROM.write(5, serialInput[3]);
+     EEPROM.write(6, serialInput[4]);
+     EEPROM.write(7, serialInput[5]);
   }
 
-  char *a = "0x0000ff";
+  for (int i = 0; i < 8; i++)
+  {
+    Serial.println(EEPROM.read(i));
+  }
 
-  unsigned long number = (unsigned long) strtol(serialInput, NULL, 0);
+
+  char color[] {0,0,0,0,0,0,0,0};
+
+  color[0] = EEPROM.read(0);
+  color[1] = EEPROM.read(1);
+  color[2] = EEPROM.read(2);
+  color[3] = EEPROM.read(3);
+  color[4] = EEPROM.read(4);
+  color[5] = EEPROM.read(5);
+  color[6] = EEPROM.read(6);
+  color[7] = EEPROM.read(7);
 
 
-  
+  unsigned long number = (unsigned long) strtol(color, NULL, 0);
+
   strip.setPixelColor(0, number);
   strip.show();
 }
@@ -60,7 +78,7 @@ char* GetSerialString()
        {
            /*Place the character in the string buffer:*/
            string[index] = byteBuffer;
-           //string[index + 1] = '\0';
+           string[index + 1] = '\0';
            /*Go to the index to place the next character in:*/
            index++;
        }

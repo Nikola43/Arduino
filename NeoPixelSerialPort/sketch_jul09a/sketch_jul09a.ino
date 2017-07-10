@@ -14,53 +14,63 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800)
 // and minimize distance between Arduino and first pixel.  Avoid connecting
 // on a live circuit...if you must, connect GND first.
 
+
+long colorHexCode;
+
 void setup()
-{
+{  
+    char EEPROMcolor[6];
+
+    EEPROMcolor[0] = EEPROM.read(0);
+    EEPROMcolor[1] = EEPROM.read(1);
+    EEPROMcolor[2] = EEPROM.read(2);
+    EEPROMcolor[3] = EEPROM.read(3);
+    EEPROMcolor[4] = EEPROM.read(4);
+    EEPROMcolor[5] = EEPROM.read(5);
+    
+    colorHexCode = (long) strtol( &EEPROMcolor[0], NULL, 16);
+
     Serial.begin(9600);
     strip.begin();
-    strip.show();
+    strip.show(); 
 }
 
 
 void loop() 
 {
-   char* serialInput;
+   char color[6];
+
+   char* serialInput = NULL;
    
-   if(Serial.available() > 0)
+   
+   if( Serial.available() > 0 )
    {
-     serialInput = GetSerialString();
-     
-     EEPROM.write(0, '0');
-     EEPROM.write(1, 'x');
-     EEPROM.write(2, serialInput[0]);
-     EEPROM.write(3, serialInput[1]);
-     EEPROM.write(4, serialInput[2]);
-     EEPROM.write(5, serialInput[3]);
-     EEPROM.write(6, serialInput[4]);
-     EEPROM.write(7, serialInput[5]);
-  }
+       serialInput = GetSerialString();
 
-  for (int i = 0; i < 8; i++)
-  {
-    Serial.println(EEPROM.read(i));
-  }
+       if ( serialInput != NULL )
+       {
+           EEPROM.write(0, serialInput[0]);
+           EEPROM.write(1, serialInput[1]);
+           EEPROM.write(2, serialInput[2]);
+           EEPROM.write(3, serialInput[3]);
+           EEPROM.write(4, serialInput[4]);
+           EEPROM.write(5, serialInput[5]);
+           
 
+           color[0] = serialInput[0];
+           color[1] = serialInput[1];
+           color[2] = serialInput[2];
+           color[3] = serialInput[3];
+           color[4] = serialInput[4];
+           color[5] = serialInput[5];
 
-  char color[] {0,0,0,0,0,0,0,0};
+           colorHexCode = (long) strtol( &color[0], NULL, 16);
+           serialInput = NULL;
+       }
+   }
 
-  color[0] = EEPROM.read(0);
-  color[1] = EEPROM.read(1);
-  color[2] = EEPROM.read(2);
-  color[3] = EEPROM.read(3);
-  color[4] = EEPROM.read(4);
-  color[5] = EEPROM.read(5);
-  color[6] = EEPROM.read(6);
-  color[7] = EEPROM.read(7);
-
-
-  unsigned long number = (unsigned long) strtol(color, NULL, 0);
-
-  strip.setPixelColor(0, number);
+   
+  strip.setPixelColor(0, colorHexCode );
   strip.show();
 }
 
@@ -69,12 +79,12 @@ char* GetSerialString()
    char string[256];
    int index = 0;
    
-   while(Serial.available() > 0)
+   while( Serial.available() > 0 )
    {
        /*Read a character as it comes in:*/
        char byteBuffer = Serial.read(); 
 
-       if(index < 255)
+       if( index < 255 )
        {
            /*Place the character in the string buffer:*/
            string[index] = byteBuffer;

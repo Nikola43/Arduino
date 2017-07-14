@@ -21,13 +21,11 @@ void setup()
 {  
     char EEPROMcolor[6];
 
-    EEPROMcolor[0] = EEPROM.read(0);
-    EEPROMcolor[1] = EEPROM.read(1);
-    EEPROMcolor[2] = EEPROM.read(2);
-    EEPROMcolor[3] = EEPROM.read(3);
-    EEPROMcolor[4] = EEPROM.read(4);
-    EEPROMcolor[5] = EEPROM.read(5);
-    
+    for ( int i = 0; i < 6; i++ )
+    {
+        EEPROMcolor[i] = EEPROM.read(i);
+    }
+
     colorHexCode = (long) strtol( &EEPROMcolor[0], NULL, 16);
 
     Serial.begin(9600);
@@ -42,27 +40,23 @@ void loop()
 
    char* serialInput = NULL;
    
-   
    if( Serial.available() > 0 )
    {
-       serialInput = GetSerialString();
+       serialInput = getSerialString();
 
        if ( serialInput != NULL )
        {
-           EEPROM.write(0, serialInput[0]);
-           EEPROM.write(1, serialInput[1]);
-           EEPROM.write(2, serialInput[2]);
-           EEPROM.write(3, serialInput[3]);
-           EEPROM.write(4, serialInput[4]);
-           EEPROM.write(5, serialInput[5]);
+           for ( int i = 0; i < 6; i++ )
+           {
+               EEPROM.write(i, serialInput[i]);
+           }
            
 
-           color[0] = serialInput[0];
-           color[1] = serialInput[1];
-           color[2] = serialInput[2];
-           color[3] = serialInput[3];
-           color[4] = serialInput[4];
-           color[5] = serialInput[5];
+           for ( int i = 0; i < 6; i++ )
+           {
+              color[i] = serialInput[i];
+           }
+           
 
            colorHexCode = (long) strtol( &color[0], NULL, 16);
            serialInput = NULL;
@@ -74,22 +68,19 @@ void loop()
   strip.show();
 }
 
-char* GetSerialString()
+char* getSerialString()
 {
    char string[256];
    int index = 0;
    
    while( Serial.available() > 0 )
    {
-       /*Read a character as it comes in:*/
        char byteBuffer = Serial.read(); 
 
        if( index < 255 )
        {
-           /*Place the character in the string buffer:*/
            string[index] = byteBuffer;
            string[index + 1] = '\0';
-           /*Go to the index to place the next character in:*/
            index++;
        }
    }

@@ -1,21 +1,31 @@
-int interval;
+
 
 void setup()
 {
     Serial.begin(9600);
 }
 
-void loop() {
-    
+void loop() 
+{
+  char* serialInput;
+     
   if(Serial.available() > 0)
   {
-     char* serialInput = GetSerialString();
+     serialInput = GetSerialString();
 
      for ( int i = 0; serialInput[i] != '\0'; i++ )
      {
           Serial.println(serialInput[i]);
      }
   }
+
+  long RGBColor = (long) strtol( &serialInput[0], NULL, 16);
+        
+  byte red   = RGBColor >> 16;
+  byte green = RGBColor >> 8 & 0xFF; 
+  byte blue  = RGBColor & 0xFF;
+        
+  Serial.print("Red: "); Serial.print(red, HEX); Serial.print("  Green: "); Serial.print(green, HEX); Serial.print("  Blue: "); Serial.println(blue, HEX);
 
 }
 

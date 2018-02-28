@@ -113,7 +113,7 @@ void controlChange(byte channel, byte control, byte value) {
   MidiUSB.sendMIDI(event);
 }
 
-int16_t outputData[] = {0,44,0,44,0,44,0,44,0,44,0};
+uint8_t outputData[] = {0,44,0,44,0,44,0,44,0,44,0};
 
 void loop() {
 
@@ -127,9 +127,10 @@ void loop() {
     outputData[8] = gy;
     outputData[10] = gz;
 
-    showMpuData(outputData);
+    //showMpuData(outputData);
+    writeToSerialPort();
+    delay(1);
     
-
     /*
      * 
      *   Serial.println("Sending note on");
@@ -148,7 +149,7 @@ void loop() {
   // controlChange(0, 10, 65); // Set the value of controller 10 on channel 0 to 65
 }
 
-void showMpuData(int16_t outputData [])
+void showMpuData(uint8_t outputData [])
 {
   for ( int i = 0; i < 11; i++ )
     {
@@ -164,11 +165,16 @@ void showMpuData(int16_t outputData [])
 
 void writeToSerialPort()
 {
-    Serial.write(ax); 
+    Serial.write(ax);
+    Serial.write(','); 
     Serial.write(ay); 
+    Serial.write(',');
     Serial.write(az); 
+    Serial.write(',');
     Serial.write(gx); 
+    Serial.write(',');
     Serial.write(gy);
+    Serial.write(',');
     Serial.write(gz);
 }
 
